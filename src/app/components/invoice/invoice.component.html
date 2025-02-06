@@ -11,12 +11,10 @@
         <div>
             <h3>Datos del cliente</h3>
             <ul>
-                <li>{{invoice?.client?.name}}</li>
-                <li>{{invoice?.client?.lastName}}</li>
-                <li>{{invoice?.client?.address?.country}}</li>
-                <li>{{invoice?.client?.address?.city}}</li>
-                <li>{{invoice?.client?.address?.street}}</li>
-                <li>{{invoice?.client?.address?.number}}</li>
+                <li>Nombre: {{invoice?.client?.name}} {{invoice?.client?.lastName}}</li>
+                <li>Pais: {{invoice?.client?.address?.country}}</li>
+                <li>Ciudad: {{invoice?.client?.address?.city}}</li>
+                <li>Direccion: {{invoice?.client?.address?.street}} {{invoice?.client?.address?.number}}</li>
             </ul>
         </div>
 
