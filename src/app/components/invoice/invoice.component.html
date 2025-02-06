@@ -1,34 +1,37 @@
-<div>
+<div class="container">
     <div>
-        <h2>Ejemplo de factura</h2>
+        <div class="alert alert-primary" role="alert">
+            <h2>Ejemplo de factura</h2>
+        </div>
+
         <div>
             <ul>
                 <li>ID: {{invoice?.id}}</li>
                 <li>Nombre: {{invoice?.name}}</li>
             </ul>
         </div>
-
-        <div>
-            <h3>Datos del cliente</h3>
-            <ul>
-                <li>Nombre: {{invoice?.client?.name}} {{invoice?.client?.lastName}}</li>
-                <li>Pais: {{invoice?.client?.address?.country}}</li>
-                <li>Ciudad: {{invoice?.client?.address?.city}}</li>
-                <li>Direccion: {{invoice?.client?.address?.street}} {{invoice?.client?.address?.number}}</li>
-            </ul>
-        </div>
-
-        <div>            
-            <h3>Datos de la empresa</h3>
-            <ul>
-                <li>{{invoice?.company?.name}}</li>
-                <li>{{invoice?.company?.fiscalNumber}}</li>
-            </ul>
+        <div class="row my-3">
+            <div class="col">
+                <h3>Datos del cliente</h3>
+                <ul class="list-group">
+                    <li class="list-group-item">Nombre: {{invoice?.client?.name}} {{invoice?.client?.lastName}}</li>
+                    <li class="list-group-item">Pais: {{invoice?.client?.address?.country}}</li>
+                    <li class="list-group-item">Ciudad: {{invoice?.client?.address?.city}}</li>
+                    <li class="list-group-item">Direccion: {{invoice?.client?.address?.street}} {{invoice?.client?.address?.number}}</li>
+                </ul>
+            </div>
+            <div class="col">            
+                <h3>Datos de la empresa</h3>
+                <ul class="list-group">
+                    <li class="list-group-item">{{invoice?.company?.name}}</li>
+                    <li class="list-group-item">{{invoice?.company?.fiscalNumber}}</li>
+                </ul>
+            </div>
         </div>
 
         <div>
             <h4>Detalle de la factura</h4>
-            <table>
+            <table class="table">
                 <thead>
                     <tr>
                         <th>ID</th>
