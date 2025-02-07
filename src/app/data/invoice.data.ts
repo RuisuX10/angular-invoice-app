@@ -1,4 +1,5 @@
 import { Invoice } from "../models/invoice";
+import { Item } from "../models/item";
 
 
 export const invoiceData: Invoice = {
@@ -15,27 +16,27 @@ export const invoiceData: Invoice = {
         }
     },
     company: {
-        name: 'New Age',
+        name: 'New Age S.A.',
         fiscalNumber: 123456,
     },
     items: [
-        {
+        new Item({
             id: 1,
             product: 'CPU Intel Core i5',
-            quantity: 1,
+            quantity: 2,
             price: 599
-        },
-        {
+        }),
+        new Item({
             id: 2,
             product: 'Corsair teclado mecanico',
             quantity: 2,
             price: 299
-        },
-        {
+        }),
+        new Item({
             id: 3,
             product: 'Monitor Asus 24 pulgadas',
             quantity: 3,
             price: 189
-        },
+        }),
     ]
 }

@@ -11,7 +11,18 @@ export class InvoiceService {
   constructor() { }
 
   getInvoice(): Invoice {
-    return this.invoice;    
+    const total = this.calculateTotal();
+    return {...this.invoice, total}   
   }
   
+  remove(id: number):Invoice {
+    this.invoice.items = this.invoice.items?.filter(item => item.id !== id);
+    const total = this.calculateTotal();
+
+    return {...this.invoice, total};
+  }
+
+  calculateTotal(): number {
+    return this.invoice.items?.reduce((total, item) => total + item.total(), 0) ?? 0;
+  }
 }
